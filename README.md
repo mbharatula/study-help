@@ -1,12 +1,30 @@
-# React + Vite
+# Study Helper
+This is a Simple Web Application Built using React.js and CSS, it helps Students / Researchers to track the Subjects They are Studying and maintain goals and accomplish them.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Quick Overview
+ - Dedicated Add Subjects Page
+ - Delete, Edit, Mark them Completed in Dashboard
+ - Review The Completed Subjects
+ - Add Goals (Yet To be Updated)
+ - Timer (Yet To be Updated)
+ - Accounts (Yet to be Updated)
 
-Currently, two official plugins are available:
+ ## Key Features
+  Users can Keep a Good track on Subjects on which they are working on by adding subjects Completing Goals and using timers as their Focus sessions, application was developed very user-friendly it takes no time to understand working of application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+ - HTML
+ - React.js
+ - CSS
 
-## Expanding the ESLint configuration
+## Live Site
+    Will Be Updated Soon After Completion of Project.
+## Testing / Reviewing the Code
+  To test the code Viewers are requested to  have node installed on their machine and viewer may clone the repository and run the following in the terminal (command Prompt / PowerShell / Terminal) opened in the cloned repository.<br/><br/>
+  `npm install `<br/>
+  `npm run dev`<br/><br/>
+  By doing this Viewer Might run Local Server and Test the project there.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  ### Author Information
+   - Name: Manikanta Bharatula
+   - E-mail : bharatulamanikantadevan@gmail.com
