@@ -1,6 +1,11 @@
 import "./History.css"
 
 function History({compSubs,setCompSubs}){
+    const handleDelete = (subjectToDelete)=>{
+        // eslint-disable-next-line no-unused-vars
+        const { [subjectToDelete]: removed, ...remainingSubs } = compSubs;
+        setCompSubs(remainingSubs);
+    };
     if(Object.keys(compSubs).length==0){
         return(
             <div className="h-content">
@@ -28,7 +33,7 @@ function History({compSubs,setCompSubs}){
                                     </div>
                                     <div className="h-gap"></div>
                                     <div className="h-btn">
-                                        <button className="h-del material-icons">close</button>
+                                        <button className="h-del material-icons" onClick={()=>handleDelete(sub)}>close</button>
                                     </div>
                                 </div>
                             </li>
