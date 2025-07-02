@@ -1,0 +1,70 @@
+.s-cont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.s-cont form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.s-name {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.s-submit {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #1a73e8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.s-submit:hover {
+  background-color: #1765cf;
+}
+.s-sucess{
+    color: green;
+    visibility: hidden;
+}
+.s-error {
+  color: #d32f2f; /* A standard red for errors */
+  font-size: 0.9rem;
+  text-align: center;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.s-name-error {
+  border-color: #d32f2f;
+}
+
+/* Optional: Make the focus outline red as well when there's an error */
+.s-name-error:focus {
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+}
+.s-input{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.s-desc{
+  font-family: inherit;
+  min-height: 10rem;
+  font-weight: 200;
+  font-size: medium;
+}

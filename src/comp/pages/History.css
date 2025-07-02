@@ -1,0 +1,51 @@
+.z-txt{
+    margin-top: 9rem;
+    text-align: center;
+    color: #868383;
+}
+ul{
+    list-style: none
+}
+.h-head{
+    text-align: center;
+    position: sticky;
+}
+.h-item{
+    padding: 1rem;
+    border:1px solid #868383;
+    border-radius: 5px;
+    display: flex;
+    margin-top: 1rem;
+}
+.h-content{
+    display: flex;
+    flex-direction: column;
+}
+.i-head{
+    font-weight: 700;
+    color: #868383;
+}
+.i-name{
+    font-weight: 500;
+    margin-left: 1rem;
+}
+.i-desc{
+    margin-left: 2rem;
+    font-size: small;
+}
+.h-gap{
+    flex-grow: 1;
+}
+.h-btn{
+    display: flex;
+    flex-direction: column;
+}
+.h-del{
+    border: none;
+    color: red;
+    background-color: #ffff;
+}
+.h-del:hover{
+    cursor: pointer;
+    color: rgb(201, 3, 3)
+}

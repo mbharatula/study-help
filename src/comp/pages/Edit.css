@@ -1,0 +1,89 @@
+.e-cont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+  flex-direction: column;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.e-cont form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.e-name {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.e-submit {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #1a73e8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.e-submit:hover {
+  background-color: #1765cf;
+}
+.e-sucess{
+    color: green;
+    visibility: hidden;
+}
+.e-error {
+  color: #d32f2f; /* A standard red for errors */
+  font-size: 0.9rem;
+  text-align: center;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.e-name-error {
+  border-color: #d32f2f;
+}
+
+/* Optional: Make the focus outline red as well when there's an error */
+.e-name-error:focus {
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+}
+.e-input{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.e-desc{
+  font-family: inherit;
+  min-height: 10rem;
+  font-weight: 200;
+  font-size: medium;
+}
+.e-btn{
+    display: flex;
+}
+.e-cancel {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #1a73e8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-left: 2rem;
+}
+
+.e-cancel:hover {
+  background-color: #1765cf;
+}
