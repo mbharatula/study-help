@@ -1,10 +1,10 @@
 import "./Dashboard.css"
 import 'material-icons/iconfont/material-icons.css';
-import "./Edit"
-import Edit from "./Edit";
+import "../Edit/Edit"
+import Edit from "../Edit/Edit";
 import { useState } from "react";
 
-function Dashboard({subs, setSubs, setCompSubs,onNavigate}){
+function Dashboard({subs, setSubs, goals, setGoals, setCompSubs,onNavigate}){
     const [editingSubject, setEditingSubject] = useState(null);
 
     const handleDone = (subject) => {
@@ -19,9 +19,10 @@ function Dashboard({subs, setSubs, setCompSubs,onNavigate}){
     };
 
     const handleDelete = (subjectToDelete) => {
-        // eslint-disable-next-line no-unused-vars
-        const { [subjectToDelete]: removed, ...remainingSubs } = subs;
+        const { [subjectToDelete]: _removedSub, ...remainingSubs } = subs;
+        const { [subjectToDelete]: _removedGoal, ...remainingGoals} = goals;
         setSubs(remainingSubs);
+        setGoals(remainingGoals);
     };
     const handleEdit = (subject) => {
         setEditingSubject(subject);
@@ -60,6 +61,9 @@ function Dashboard({subs, setSubs, setCompSubs,onNavigate}){
                                             {desc.map((word,index)=>(
                                                 <span key={index}>{word}<br/></span>
                                             ))}
+                                        </div>
+                                        <div className="sub-goals">
+                                            {goals[sub]?.length ?? 0} Goals Yet to be done
                                         </div>
                                     </div>
                                     <div className="dash-gap"></div>

@@ -1,15 +1,18 @@
 import "./App.css"
 import { useState } from "react";
 
-import NavBar from "./comp/NavBar/NavBar";
-import Dashboard from "./comp/pages/Dashboard";
-import AddSub from "./comp/pages/AddSub";
-import History from "./comp/pages/History";
+import NavBar from "./comp/NavBar/NavBar"
+import Dashboard from "./comp/Dashboard/Dashboard";
+import History from "./comp/History/History";
+import AddSub from "./comp/AddSub/AddSub";
+import Goal from "./comp/Goal/Goal";
+
 
 function App(){
   let [currentPage,setCurrentPage] = useState("Dashboard");
   let [currentSubs,setCurrentSubs] = useState({});
   let [compSubs,setCompSubs] = useState({});
+  let [currGoals,setCurrGoals] = useState({});
 
   const renderPage = ()=>{
     if(currentPage === "Add Subjects"){
@@ -18,13 +21,20 @@ function App(){
       addSubs={setCurrentSubs}
       onNavigate={setCurrentPage}/>
     }
-    else if(currentPage == "History"){
+    else if(currentPage === "History"){
       return <History
       compSubs={compSubs}
       setCompSubs={setCompSubs}/>
     }
+    else if(currentPage === "Add Goal"){
+      return <Goal
+      currSub={currentSubs}
+      setCurrGoal={setCurrGoals}/>;
+    }
     return <Dashboard 
     subs={currentSubs}
+    goals={currGoals}
+    setGoals={setCompSubs}
     setSubs={setCurrentSubs}
     setCompSubs={setCompSubs}/>
   }

@@ -66,3 +66,13 @@ ul{
 .item-edit:hover{
     cursor: pointer;
 }
+.sub-goals{
+    font-weight: 500;
+    font-size: small;
+    margin-left: 2rem;
+}
+.sub-goals:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 600;
+}
