@@ -7,6 +7,8 @@ import History from "./comp/History/History";
 import AddSub from "./comp/AddSub/AddSub";
 import Goal from "./comp/Goal/Goal";
 import Timer from "./comp/Timer/Timer";
+import Account from "./comp/Account/Account";
+
 
 
 function App(){
@@ -44,6 +46,9 @@ function App(){
       goals={currGoals}
       setGoal={setCurrGoals}
       subject={timerSubject || Object.keys(currentSubs)[0] || ''}/>
+    }
+    else if(currentPage=="Account"){
+      return<Account/>
     }
     return <Dashboard 
     subs={currentSubs}

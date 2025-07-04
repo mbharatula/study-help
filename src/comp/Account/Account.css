@@ -1,0 +1,28 @@
+.a-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.a-pic{
+    text-align: center;
+    font-size: 9rem;
+}
+.a-head{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.a-name,.a-email{
+    font-size: 1.3rem;
+}
+.a-out{
+    margin-top: 1.5rem;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #2e7fd1;
+    color: white;
+}
+.a-out:hover{
+    background-color: #1976d2;
+}
