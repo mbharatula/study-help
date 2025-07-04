@@ -28,6 +28,7 @@ function Goal({currSub,setCurrGoal}){
         // existing goals for the selected subject and adds the new one to the array.
         setCurrGoal((prevGoals) => {
             const existingGoalsForSub = prevGoals[selectedSub] || [];
+            console.log({...prevGoals, [selectedSub]:[...existingGoalsForSub,newGoal]});
             return {
                 ...prevGoals,
                 [selectedSub]: [...existingGoalsForSub, newGoal],

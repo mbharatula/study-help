@@ -1,11 +1,12 @@
 import "./Dashboard.css"
 import 'material-icons/iconfont/material-icons.css';
-import "../Edit/Edit"
 import Edit from "../Edit/Edit";
 import { useState } from "react";
+import ViewGoal from "../ViewGoal/ViewGoal";
 
-function Dashboard({subs, setSubs, goals, setGoals, setCompSubs,onNavigate}){
+function Dashboard({subs, setSubs, goals, setGoals, setCompSubs}){
     const [editingSubject, setEditingSubject] = useState(null);
+    const [goalView, setGoalView] = useState(null);
 
     const handleDone = (subject) => {
         // Add the subject to the completed list immutably
@@ -27,15 +28,28 @@ function Dashboard({subs, setSubs, goals, setGoals, setCompSubs,onNavigate}){
     const handleEdit = (subject) => {
         setEditingSubject(subject);
     };
-
+    const handleGoal = (subject)=>{
+        setGoalView(subject);
+    }
     if (editingSubject) {
         return <Edit
             subs={subs}
             setSubs={setSubs}
             subject={editingSubject}
             onClose={() => setEditingSubject(null)}
-            onNavigate={onNavigate}
+            goal={goals}
+            setGoal={setGoals}
         />
+    }
+    if (goalView){
+        return(
+            <ViewGoal
+            subject={goalView}
+            desc={subs[goalView]}
+            goals={goals}
+            onClose={()=>setGoalView(null)}
+            setGoals={setGoals}/>
+        );
     }
 
     if(Object.keys(subs).length === 0){
@@ -62,7 +76,7 @@ function Dashboard({subs, setSubs, goals, setGoals, setCompSubs,onNavigate}){
                                                 <span key={index}>{word}<br/></span>
                                             ))}
                                         </div>
-                                        <div className="sub-goals">
+                                        <div className="sub-goals" onClick={()=> handleGoal(sub)}>
                                             {goals[sub]?.length ?? 0} Goals Yet to be done
                                         </div>
                                     </div>

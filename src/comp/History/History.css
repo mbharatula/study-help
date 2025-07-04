@@ -30,6 +30,9 @@ ul{
     margin-left: 1rem;
 }
 .i-desc{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
     margin-left: 2rem;
     font-size: small;
 }

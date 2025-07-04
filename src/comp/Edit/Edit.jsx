@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Edit.css"
 
-function Edit({subs, setSubs, subject, onClose}){
+function Edit({subs, setSubs, subject, onClose,goal,setGoal}){
     // Initialize state with the data of the subject being edited
     const [currentName, setCurrentName] = useState(subject);
     const [currentDesc, setCurrentDesc] = useState(subs[subject].join(', '));
@@ -13,7 +13,6 @@ function Edit({subs, setSubs, subject, onClose}){
             setErr("Subject Name Cannot Be Empty");
             return;
         }
-
         const newSubs = { ...subs };
         const newDescArray = currentDesc.split(',').map(item => item.trim()).filter(Boolean);
 
@@ -24,8 +23,10 @@ function Edit({subs, setSubs, subject, onClose}){
 
         // Add the updated entry
         newSubs[currentName.trim()] = newDescArray;
-
-        setSubs(newSubs);
+        const newGoal = {...goal};
+        delete newGoal[subject];
+        setGoal(newGoal);
+                setSubs(newSubs);
         onClose(); // Return to the dashboard view
     }
     function handleCancel(event){
@@ -35,6 +36,7 @@ function Edit({subs, setSubs, subject, onClose}){
     return(
     <div className="e-cont">
     <h3>Edit Information</h3>
+    <h5 className="e-info">*On Editing Subject Details, Goals may be deleted</h5>
     <form onSubmit={handleSubmit}>
         <div className="e-input">
         <input

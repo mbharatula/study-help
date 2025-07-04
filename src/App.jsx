@@ -34,7 +34,7 @@ function App(){
     return <Dashboard 
     subs={currentSubs}
     goals={currGoals}
-    setGoals={setCompSubs}
+    setGoals={setCurrGoals}
     setSubs={setCurrentSubs}
     setCompSubs={setCompSubs}/>
   }
