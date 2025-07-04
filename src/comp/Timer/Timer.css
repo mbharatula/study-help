@@ -1,0 +1,80 @@
+.h-info{
+    text-align: center;
+    color: #868383;
+    margin-top: 9rem;
+}
+.t-select {
+    /* 1. Resetting default browser styles */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    /* 2. Custom styling for a modern look */
+    display: block;
+    width: 100%;
+    padding: 0.75em 2.5em 0.75em 1em; /* Good spacing: top/bottom, right (for arrow), left */
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #fff;
+    border: 1px solid #d1d5db; /* A light grey border */
+    border-radius: 8px; /* Rounded corners */
+    color: #111827;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    /* 3. Custom arrow using an embedded SVG */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7281' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%;
+    background-size: 1.5em 1.5em;
+}
+.t-select:invalid {
+    color: #6b7281; /* A grey color for the placeholder text */
+}
+.t-select:focus {
+    outline: none;
+    border-color: #3b82f6; /* A nice blue for focus state */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+.t-item{
+    display: flex;
+    border-radius: 0.9rem;
+    padding: 1em;
+    box-shadow: 0 0 5px #000;
+}
+.ti-content{
+    display: flex;
+    flex-direction: column;
+}
+.ti-gap{
+    flex-grow: 1;
+}
+.ti-btns{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.ti-delete{
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    color: rgb(255, 77, 77);
+}
+.ti-complete{
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    color: gray
+}
+.ti-delete:hover{
+    color: red;
+}
+.ti-complete:hover{
+    color: #000
+}
+.ti-name,.ti-time{
+    margin-left: 3rem;
+}
+.ti-head{
+    font-weight: bold;
+}

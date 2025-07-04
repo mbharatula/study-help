@@ -4,7 +4,7 @@ import Edit from "../Edit/Edit";
 import { useState } from "react";
 import ViewGoal from "../ViewGoal/ViewGoal";
 
-function Dashboard({subs, setSubs, goals, setGoals, setCompSubs}){
+function Dashboard({subs, setSubs, goals, setGoals, setCompSubs, onNavigateToTimer}){
     const [editingSubject, setEditingSubject] = useState(null);
     const [goalView, setGoalView] = useState(null);
 
@@ -48,7 +48,8 @@ function Dashboard({subs, setSubs, goals, setGoals, setCompSubs}){
             desc={subs[goalView]}
             goals={goals}
             onClose={()=>setGoalView(null)}
-            setGoals={setGoals}/>
+            setGoals={setGoals}
+            onNavigateToTimer={onNavigateToTimer}/>
         );
     }
 

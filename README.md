@@ -27,4 +27,4 @@ This is a Simple Web Application Built using React.js and CSS, it helps Students
 
   ### Author Information
    - Name: Manikanta Bharatula
-   - E-mail : bharatulamanikantadevan@gmail.com
+   - [LinkedIn](https://www.linkedin.com/in/manikanta-bharatula/) | [Mail](mailto:bharatulamanikantadevan@gmail.com) | [GitHub](https://github.com/mbharatula)

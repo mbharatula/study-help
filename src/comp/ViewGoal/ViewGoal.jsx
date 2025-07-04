@@ -1,17 +1,15 @@
 import 'material-icons/iconfont/material-icons.css';
 import './ViewGoal.css'
-import { useState } from 'react';
 
-function ViewGoal({subject,goals,desc,onClose,setGoals}){
+function ViewGoal({subject,goals,desc,onClose,setGoals, onNavigateToTimer}){
 
     const descriptionTopics = desc || [];
-    const [subjectGoals, setSubjectGoals] = useState(goals[subject] || []);
+    const subjectGoals = goals[subject] || [];
 
     const handleDelete = (event, indexToDelete) => {
         event.preventDefault();
         const newSubjectGoals = subjectGoals.filter((_, index) => index !== indexToDelete);
 
-        setSubjectGoals(newSubjectGoals);
         setGoals(prevGoals => ({
             ...prevGoals,
             [subject]: newSubjectGoals,
@@ -19,6 +17,7 @@ function ViewGoal({subject,goals,desc,onClose,setGoals}){
     };
     const handleDone = (event)=>{
         event.preventDefault();
+        onNavigateToTimer(subject);
     };
     return(
         <div className="v-content">

@@ -6,6 +6,7 @@ import Dashboard from "./comp/Dashboard/Dashboard";
 import History from "./comp/History/History";
 import AddSub from "./comp/AddSub/AddSub";
 import Goal from "./comp/Goal/Goal";
+import Timer from "./comp/Timer/Timer";
 
 
 function App(){
@@ -13,6 +14,12 @@ function App(){
   let [currentSubs,setCurrentSubs] = useState({});
   let [compSubs,setCompSubs] = useState({});
   let [currGoals,setCurrGoals] = useState({});
+  const [timerSubject, setTimerSubject] = useState(null);
+
+  const handleNavigateToTimer = (subject) => {
+    setTimerSubject(subject);
+    setCurrentPage('Timer');
+  };
 
   const renderPage = ()=>{
     if(currentPage === "Add Subjects"){
@@ -31,12 +38,20 @@ function App(){
       currSub={currentSubs}
       setCurrGoal={setCurrGoals}/>;
     }
+    else if(currentPage=="Timer"){
+      return <Timer
+      subjects={currentSubs}
+      goals={currGoals}
+      setGoal={setCurrGoals}
+      subject={timerSubject || Object.keys(currentSubs)[0] || ''}/>
+    }
     return <Dashboard 
     subs={currentSubs}
     goals={currGoals}
     setGoals={setCurrGoals}
     setSubs={setCurrentSubs}
-    setCompSubs={setCompSubs}/>
+    setCompSubs={setCompSubs}
+    onNavigateToTimer={handleNavigateToTimer}/>
   }
   return(
     <div id="app-root">
