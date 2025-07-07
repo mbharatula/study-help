@@ -18,11 +18,15 @@ This is a Simple Web Application Built using React.js and CSS, it helps Students
  - CSS
 
 ## Live Site
-    Will Be Updated Soon After Completion of Project.
+  [Live Site](https://studytracker-mbharatula.netlify.app/)
 ## Testing / Reviewing the Code
   To test the code Viewers are requested to  have node installed on their machine and viewer may clone the repository and run the following in the terminal (command Prompt / PowerShell / Terminal) opened in the cloned repository.<br/><br/>
-    `npm install `<br/>
-    `npm run dev`<br/><br/>
+
+    npm install
+    npm run build
+    npm run dev
+
+
   By doing this Viewer Might run Local Server and Test the project there.
 
   ### Author Information
