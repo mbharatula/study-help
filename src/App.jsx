@@ -8,7 +8,7 @@ import AddSub from "./comp/AddSub/AddSub";
 import Goal from "./comp/Goal/Goal";
 import Timer from "./comp/Timer/Timer";
 import Account from "./comp/Account/Account";
-
+x
 
 
 function App(){
@@ -33,7 +33,9 @@ function App(){
     else if(currentPage === "History"){
       return <History
       compSubs={compSubs}
-      setCompSubs={setCompSubs}/>
+      setCompSubs={setCompSubs}
+      subs={currentSubs}
+      setSub={setCurrentSubs}/>
     }
     else if(currentPage === "Add Goal"){
       return <Goal

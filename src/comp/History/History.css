@@ -52,3 +52,12 @@ ul{
     cursor: pointer;
     color: rgb(201, 3, 3)
 }
+.h-reset{
+    background-color: inherit;
+    color: #868383;
+    cursor: pointer;
+    border: none;
+}
+.h-reset:hover{
+    color: #000;
+}

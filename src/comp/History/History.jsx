@@ -1,11 +1,17 @@
 import "./History.css"
 
-function History({compSubs,setCompSubs}){
+function History({compSubs,setCompSubs,subs,setSub}){
     const handleDelete = (subjectToDelete)=>{
         // eslint-disable-next-line no-unused-vars
         const { [subjectToDelete]: removed, ...remainingSubs } = compSubs;
         setCompSubs(remainingSubs);
     };
+    const handleReset = (subjectToAdd)=>{
+        const { [subjectToAdd]: content, ...remainingSubs} = compSubs
+        let newSubs = {...subs,[subjectToAdd]: content};
+        setCompSubs(remainingSubs);
+        setSub(newSubs);
+    }
     if(Object.keys(compSubs).length==0){
         return(
             <div className="h-content">
@@ -34,6 +40,7 @@ function History({compSubs,setCompSubs}){
                                     <div className="h-gap"></div>
                                     <div className="h-btn">
                                         <button className="h-del material-icons" onClick={()=>handleDelete(sub)}>close</button>
+                                        <button className="h-reset material-icons" onClick={()=>handleReset(sub)}>replay</button>
                                     </div>
                                 </div>
                             </li>

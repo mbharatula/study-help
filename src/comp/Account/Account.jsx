@@ -1,5 +1,9 @@
 import "./Account.css"
 function Account(){
+    const handleClick = (e)=>{
+        e.preventDefault();
+        alert("This is A Front-End Application, Sorry!");
+    }
     return(
         <div className="a-content">
             <div className="a-pic material-icons">person</div>
@@ -7,7 +11,7 @@ function Account(){
             <div className="a-name">John Doe</div>
             <div className="a-head">E-Mail</div>
             <div className="a-email">john.doe@example.com</div>
-            <button className="a-out" disabled>Log Out</button>
+            <button className="a-out" onClick={(e)=> handleClick(e)}>Log Out</button>
         </div>
     );
 }
