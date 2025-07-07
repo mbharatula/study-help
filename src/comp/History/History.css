@@ -41,7 +41,7 @@ ul{
 }
 .h-btn{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 .h-del{
     border: none;

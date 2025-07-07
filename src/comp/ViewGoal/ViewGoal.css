@@ -43,7 +43,7 @@ h3{
 }
 .vi-btns{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
 }
 .v-items{
@@ -60,10 +60,10 @@ h3{
 }
 .vi-complete{
     border: none;
-    color: green;
+    color: rgb(87, 86, 86);
     cursor: pointer;
     background-color: inherit;
 }
-.vi:hover{
-    color: rgb(6, 77, 6);
+.vi-complete:hover{
+    color: black;
 }

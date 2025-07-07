@@ -1,0 +1,44 @@
+.tc-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.tc-timer-circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 8px solid #4caf50; /* A nice green color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tc-time-display {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.tc-goal-details {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #555;
+}
+.tc-btn{
+    border: none;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: inherit;
+    cursor: pointer;
+}
+.tc-btn:hover{
+    background-color: #cccbcb;
+}

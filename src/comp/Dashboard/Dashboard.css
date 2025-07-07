@@ -38,7 +38,7 @@ ul{
 }
 .dash-btn{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 .item-done{
     border: none;

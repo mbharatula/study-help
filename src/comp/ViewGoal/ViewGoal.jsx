@@ -66,7 +66,7 @@ function ViewGoal({subject,goals,desc,onClose,setGoals, onNavigateToTimer}){
                                     <div className='vi-gap'></div>
                                     <div className='vi-btns'>
                                         <button className='material-icons vi-close' onClick={(e) => handleDelete(e, index)}>close</button>
-                                        <button className='material-icons vi-complete' onClick={(e)=>handleDone(e)}>check_circle</button>
+                                        <button className='material-icons vi-complete' onClick={(e)=>handleDone(e)}>arrow_forward</button>
                                     </div>
                                 </div>
                             </li>

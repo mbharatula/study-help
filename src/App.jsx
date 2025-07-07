@@ -8,7 +8,8 @@ import AddSub from "./comp/AddSub/AddSub";
 import Goal from "./comp/Goal/Goal";
 import Timer from "./comp/Timer/Timer";
 import Account from "./comp/Account/Account";
-x
+import TimerCount from "./comp/TimerCount/TimerCount";
+
 
 
 function App(){
@@ -17,10 +18,29 @@ function App(){
   let [compSubs,setCompSubs] = useState({});
   let [currGoals,setCurrGoals] = useState({});
   const [timerSubject, setTimerSubject] = useState(null);
+  const [timerGoalInfo, setTimerGoalInfo] = useState(null);
 
   const handleNavigateToTimer = (subject) => {
     setTimerSubject(subject);
     setCurrentPage('Timer');
+  };
+
+  const handleNavigateToTimerCount = (subject, goal, index) => {
+    setTimerGoalInfo({ subject, goal, index });
+    setCurrentPage('TimerCount');
+  };
+
+  const handleFinishTask = (subject, index, timeLeftInSeconds) => {
+    const timeLeftInMinutes = Math.ceil(timeLeftInSeconds / 60);
+    setCurrGoals(prevGoals => {
+      const newGoals = { ...prevGoals };
+      const subjectGoals = [...newGoals[subject]];
+      // Update the specific goal's time
+      subjectGoals[index] = { ...subjectGoals[index], time: timeLeftInMinutes };
+      newGoals[subject] = subjectGoals;
+      return newGoals;
+    });
+    setCurrentPage('Dashboard');
   };
 
   const renderPage = ()=>{
@@ -47,7 +67,11 @@ function App(){
       subjects={currentSubs}
       goals={currGoals}
       setGoal={setCurrGoals}
-      subject={timerSubject || Object.keys(currentSubs)[0] || ''}/>
+      subject={timerSubject || Object.keys(currentSubs)[0] || ''}
+      onNavigateToTimerCount={handleNavigateToTimerCount}/>
+    }
+    else if(currentPage=="TimerCount"){
+      return <TimerCount goalInfo={timerGoalInfo} onFinishTask={handleFinishTask} />
     }
     else if(currentPage=="Account"){
       return<Account/>

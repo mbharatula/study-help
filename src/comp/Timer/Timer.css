@@ -51,7 +51,7 @@
 }
 .ti-btns{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.2rem;
 }
 .ti-delete{

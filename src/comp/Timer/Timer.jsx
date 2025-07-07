@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Timer.css"
 
-function Timer({subjects,goals,setGoal,subject}){
+function Timer({subjects,goals,setGoal,subject, onNavigateToTimerCount}){
     const [selectedSub,setSelectedSub] = useState(subject);
     const handleSubChange = (e)=>{
         const newSub = e.target.value;
@@ -18,6 +18,14 @@ function Timer({subjects,goals,setGoal,subject}){
             ...prevGoals,
             [selectedSub]: newSubjectGoals,
         }));
+    };
+    const handleProgress = (event, goalToStart, index)=>{
+        event.preventDefault();
+        const goalForTimer = {
+            ...goalToStart,
+            content: goalToStart.content || selectedSub,
+        };
+        onNavigateToTimerCount(selectedSub, goalForTimer, index);
     };
     if(Object.keys(subjects).length === 0){
         return(
@@ -61,7 +69,7 @@ function Timer({subjects,goals,setGoal,subject}){
                                             <div className="ti-gap"></div>
                                             <div className="ti-btns">
                                                 <button className="material-icons ti-delete" onClick={(e)=>handleDelete(e,index)}>close</button>
-                                                {/* <button className="material-icons ti-complete" onClick={(e)=>handleProgress(e)}>arrow_forward</button> */}
+                                                <button className="material-icons ti-complete" onClick={(e)=>handleProgress(e, goal, index)}>arrow_forward</button>
                                             </div>
                                         </div>
                                     </li>
